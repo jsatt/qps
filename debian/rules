@@ -1,0 +1,60 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+CXXFLAGS = -g
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CXXFLAGS += -O0
+else
+	CXXFLAGS += -O2
+endif
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	qmake 
+	$(MAKE)
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	[ ! -f Makefile ] || { $(MAKE) distclean && rm -f Makefile; }
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_install qps usr/bin
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs CHANGES
+	dh_installdocs
+	dh_installmenu
+	dh_installman qps.1
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

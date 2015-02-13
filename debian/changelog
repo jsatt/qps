@@ -1,0 +1,223 @@
+qps (1.9.18.1) stable; urgency=low
+
+  * release
+
+ -- hyun <hyun@localhost.localdomain>  Wed,  9 Aug 2006 02:27:23 +0900
+
+qps (1.9.18beta1) unstable; urgency=low
+
+  * release
+
+ -- hyun <fasthyun@magicn.com>  Tue,  8 Aug 2006 02:57:47 +0900
+
+qps (1.9.13-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release.
+    - Works with 2.6 kernels on SMP machines.  Closes: #322876.
+  * qps.pro: Remove proc.cpp symlink on clean.
+  * Switch to debhelper 5.
+  * Improve description.  Closes: #343436.
+  * debian/README.Debian: No longer relevant now that upstream supports
+    Qt3 out of the box.
+  * debian/changelog: Remove duplicate entries.
+  * debian/copyright:
+    - Update upstream URL and authors.
+    - Remove outdated (and no longer required) list of changes.
+  * debian/menu:
+    - Change section to Apps/System.
+    - Add hints and longtitle.
+  * debian/rules:
+    - Use gcc 4.0 on all architectures.
+    - Let dh_strip handle DEB_BUILD_OPTIONS=nostrip.
+  * debian/rules-rince: Remove cruft.
+  * debian/watch: Add.
+
+ -- hyun <hyun@localhost.localdomain>  Tue,  8 Aug 2006 02:50:14 +0900
+
+qps (1.9.7.0-4) unstable; urgency=low
+
+  * QA upload orphaning the package (See: #341907).
+  * Rebuild for Qt/KDE transition (Closes: #328013).
+  * qps.C: Fix gcc-4.0 FTBFS (Closes: #288305).
+  * Bump Standards-Version.
+  * debian/copyright: update FSF address and convert file to utf-8.
+
+ -- Christoph Berg <myon@debian.org>  Sun,  4 Dec 2005 01:35:49 +0100
+
+qps (1.9.7.0-3) unstable; urgency=low
+
+  * Port to QT 3 (this time for real), with apologies to ro@suse.
+  * Update copyright file.
+  * Use default C++ compiler.
+  * Thanks for the Help from Florian Weimar
+
+ -- Hanno Wagner <wagner@debian.org>  Mon, 15 Mar 2004 23:11:22 +0100
+
+qps (1.9.7.0-2) unstable; urgency=low
+
+  * first try to install with libqt2 and libqt3	
+ 
+ -- Hanno Wagner <wagner@debian.org>  Mon, 15 Mar 2004 20:15:23 +0100
+
+qps (1.9.7.0-1.0) unstable; urgency=low
+
+  * Non-maintainer upload from DebCamp BSP.
+  * Made sure it compiles with Qt3 and not Qt2
+   (Closes: #180499, #198544)
+
+ -- Peter Karlsson <peterk@debian.org>  Mon, 14 Jul 2003 11:45:00 +0100
+
+qps (1.9.7.0-1) unstable; urgency=low
+ 
+  * NMU
+  * Redoing package so that it creates a .diff.gz to follow policy
+  * Fix builds with new QT and new glibc (Closes: #88778, #67148, #89446, #89780)
+  * Add build-depends
+ 
+ -- Ivan E. Moore II <rkrusty@debian.org>  Tue, 20 Mar 2001 04:42:23 -0700
+
+qps (1.9.7-4) unstable; urgency=low
+
+  * fixed Bug in prerm (missing #!/bin/bash in the first line)
+
+ -- Hanno Wagner <wagner@debian.org>  Thu, 26 Oct 2000 06:42:23 +0200
+
+qps (1.9.7-3) unstable; urgency=low
+
+  * fixed Bug #74321 (building against qt-2.2 and qt2.2-dev)
+
+ -- Hanno Wagner <wagner@debian.org>  Wed, 08 Oct 2000 14:42:23 +0200
+
+qps (1.9.7-2) unstable; urgency=low
+
+  * fixed Bug #72542 (building against qt-2.2)
+
+ -- Hanno Wagner <wagner@debian.org>  Wed, 27 Sep 2000 13:42:23 +0200 
+
+qps (1.9.7-1) unstable; urgency=low
+
+  * New upstream release
+  * changed to main-distribution; qt is GPL
+
+ -- Hanno Wagner <wagner@debian.org>  Mon,  8 May 2000 01:20:01 +0200
+
+qps (1.9.3-3) unstable; urgency=low
+
+  * recompiled with libqt2
+
+ -- Hanno Wagner <wagner@debian.org>  Sun, 12 Dec 1999 20:16:02 +0100
+
+qps (1.9.3-2) unstable; urgency=low
+
+  * NMU fixed.
+  
+ -- Hanno Wagner <wagner@debian.org>  Fri, 12 Nov 1999 21:28:06 +0100
+
+qps (1.9.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@debian.org>  Tue,  9 Nov 1999 20:37:33 +0100
+
+qps (1.4.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@debian.org>  Fri,  9 Oct 1998 09:28:27 +0200
+
+qps (1.4.3-2) unstable; urgency=low
+
+  * Added menu support (System)
+
+ -- Hanno Wagner <wagner@debian.org>  Tue, 23 Jun 1998 12:36:52 +0200
+
+qps (1.4.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@debian.org>  Fri, 19 Jun 1998 13:48:13 +0200
+
+qps (1.4.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@linux.de>  Fri, 15 May 1998 11:46:28 +0200
+
+qps (1.4-1) unstable; urgency=low
+
+  * New upstream release
+  
+ -- Hanno Wagner <wagner@linux.de>  Tue, 12 May 1998 18:11:47 +0200
+
+qps (1.3.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@linux.de>  Sat, 21 Mar 1998 08:37:28 +0100
+
+qps (1.3-2) unstable; urgency=low
+
+  * fixed Bug #16635 (linked with libc5 still,statically linked with Qt)
+  * fixed Bug #13410 (qps-1.2 avaibalbe)
+  * fixed Bug #13629
+  * fixed Bug #16332
+  * fixed Bug #17987
+  * should be now in contrib
+
+ -- Hanno Wagner <wagner@linux.de>  Wed, 11 Mar 1998 06:17:55 +0100
+
+qps (1.3-1) stable; urgency=low
+
+  * New upstream release
+
+ -- Hanno Wagner <wagner@linux.de>  Thu, 26 Feb 1998 05:32:57 +0100
+
+qps (1.1-1) stable; urgency=low
+
+  * fixed zero division bug when there is no swa
+  * corrected inclusion of "running" processes (only R, W, D included)
+  * don't change the sorting order if the sorting field is removed from the view
+  * added %WCPU field (cpu percentage averaged over 30 s)
+  * added PLCY and RPRI fields for Posix.1b realtime scheduling
+  * dialog to change scheduling and/or realtime priority (Posix.1b)
+  * option to toggle the auto-saving of settings, and explicitly save them
+  * various cosmetic changes
+  * WCHAN is displayed in symbolic form (reading symbols from System.map)
+  * fixed RSS and SWAP to use resident rather than rss
+  * made the CrossBox less deep and more visually obvious
+  * fixed display of TIME to change format at long runtimes
+  * added Socket Info option and socket info window
+  * added some keyboard accelerators
+  * status bar rearrangement/facelift
+  * added load graph
+  * added icon (with load graph if needed). Use qembed to build default icon
+  * removed the legend window, added tooltips for headings instead
+  * removed close button in modeless dialogs, then put it back again (hard work)
+
+ -- Hanno Wagner <wagner@linux.de>  Mon, 16 Jun 1997 10:08:49 +0200
+
+
+qps (1.0-2) stable; urgency=low
+
+  * Bugfixes before publishing
+
+ -- Hanno Wagner <wagner@linux.de>  Thu, 17 Apr 1997 17:25:26 +0100
+
+
+qps (1.0-1) stable; urgency=low
+
+  * Initial Release.
+
+ -- Hanno Wagner <wagner@linux.de>  Thu, 17 Apr 1997 10:33:00 +0100
+
+Changes from version 0.1 to 1.0:
+
+* Field selection dialog
+* Menu option to hide the command path in CMDLINE, reducing clutter
+* Menu option to hide the status bar
+* Extended status bar (uptime, cpu graph)
+* Renice is now always absolute (for simplicity); no "=" is needed.
+* Some fields added (flags, wchan, start)
+* Geometry and other settings are read from $(HOME)/.qps-settings,
+  and saved when closed

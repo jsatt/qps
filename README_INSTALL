@@ -1,0 +1,100 @@
+ 		 qps --- visual process manager  (GPL)
+		    http://kldp.net/projects/qps/
+
+----------------------------------------------------------------------------
+Requirements for compile:
+
+	* Linux kernel 2.6 later, or  Solaris 2.6 or later.
+	* Qt-devel-4.3.x later
+	* gcc 
+
+for Solaris
+	SUNWxorg-hearders
+	SUNWgcc  3.4.x
+	
+----------------------------------------------------------------------------
+INSTALLING
+
+check your Qt library works well 
+then,
+
+1. shell> qmake or qmake-qt4
+
+2. shell> make 
+    or make -j 2  on SMP system
+
+3. shell>make install   
+
+     /usr/local/bin/qps
+     /usr/local/share/man/man1/qps.1
+
+
+Note:  Qps need not (and should not) be setuid root.
+
+
+
+COMMON FAIL PROBLEM 
+
+1. you have a wrong develop envrionment for QT4
+	make sure qt_example works well
+
+2.	"cc1plus: error: .obj/qps: No such file or directory
+	"cc1plus: error: one or more PCH files were found, but they were invalid
+	"cc1plus: error: use -Winvalid-pch for more information
+    
+    If theses errors occur, then do
+	shell>make clean
+    
+
+compile fails maybe your develop environment has a problem.
+If you don't get it to work, if qps crashes or doesn't behave as 
+expected, mail to me and I'll see what I can do.  
+
+
+fasthyun@show.co.kr
+
+
+=============================================================================
+PAKAGE MAINTAINER 
+
+rene.merou@kdemail.net (Debian, Ubuntu)
+eslrahc@bellsouth.net (mandriva)
+darose@darose.net (Arch linux)
+makghosh@fedoraproject.org (Fedora) gajownik@fedora.pl
+
+==============================================================================
+DOCUMENTATION
+
+is contained in the qps.1 man page. To read it without installing it,
+say "nroff -man qps.1 | more".
+"qps -help" displays the most commonly used command line options.
+
+
+THANKS TO
+
+the following persons for bug reports/fixes/patches/ideas, in no particular
+order:
+
+Rudolf Leitgeb       Paul Francis          Henner Zeller      Erik B. Berry
+J. Van Stonecypher   Eckart Hofmann        Mack               Birko Bergt
+Stephan Hegel        Francesco Defilippo   Ximenes Zalteca    Torsten Hilbrich
+Holger Graf          Mario Weilguni        Stefano Ghirlanda  Greg R. Nate
+Cengiz Alaettinoglu  Gustav Hllberg       Dave Parker        Justin Burket
+Ben Gertzfield       Christian Wetzel      Peter Amstutz      Craig P. Earls
+Marcus Herbert       Jorge M. Pacheco      Ramiro Estrugo     Christian Vogel
+Anders Melchiorsen   Jochem Wichers Hoeth  Wolfgang Weisselberg  Robert Frank
+Slawek Lisznianski   WeeSan Lee		   Bernd Gehrmann     Mathias Frhlich
+Christer Ekholm      Matthew Gabeler-Lee   Tim Harman         James Blanding
+Fredric Meunier      David Ronis	   Ulrik Kjems 	      Christoph Rohland
+James H. Cloos, Jr.  Uwe Wolfram	   Michael Widenius   Jean-Michel Rouet
+Sai-Lai Lo
+
+and then some people I probably have forgotten.
+
+-- 
+fasthyun@show.co.kr
+Mattias Engdegrd(f91-men@nada.kth.se) (author of original qps)
+
+-- note
+/usr/ccs/bin/make
+/usr/ccs/bin/strip

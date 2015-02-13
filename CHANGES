@@ -1,0 +1,392 @@
+Changes from 1.9.16 to 1.9.17
+    * fixed proc_solaris.cpp compile error ( thanks to Leisner, Martin)
+    * fixed proc_common.cpp compile error under Solaris
+    * fixed infobar.h compile error under Solaris with Sun One Studio compiler
+
+Changes from 1.9.15 to 1.9.16    
+    * added new hidden_list feature
+    * added thread(LWP) checkbox for Solaris (thanks to Derek Godfrey)
+    * fixed systray bugs
+    * fixed table bugs
+    * fixed command_edit segfault
+    * fixed thread_show segfault
+    * fixed a window_state restore bug
+    
+Changes from 1.9.13 to 1.9.14
+    * fixed a segment falut bug of "Detail"
+
+Changes from 1.9.10 to 1.9.11
+    * Add a Quit button to Solaris qps.
+    * Set a default font for Solaris qps .
+    * Fixed bugs.
+    
+Changes from 1.9.9.4 to 1.9.10
+* More accurate view of tasks (threads) in Linux
+* Five new scheduling fields added (Linux) : TGID, TMS, NLWP, %SLPAVG and CPUSET
+    * TGID : Task Group Identificator
+    * TMS : Time Slice
+    * NLWP : Number of tasks in a task group
+    * %SLPAVG : Recent percentage of task sleep time
+    * CPUSET : Possible CPUs for task
+* New Scheduling View added (Linux) 
+* Fixed some trivial bugs 
+
+Changes from 1.9.6 to 1.9.7
+
+* Fixed a silly startup bug (thanks to Jean-Michel Rouet)
+* Made to work on recent (2.3.99preX) Linux kernels (thanks to Sai-Lai Lo)
+* Added some default handy commands (gdb and strace/truss)
+
+Changes from 1.9.5 to 1.9.6
+
+* Disable "Migrate" popup menu if no selected process can move (MOSIX only)
+* %CPU is shown as percentage of one CPU, not all (Solaris only)
+* Alpha SMP zero division bug fixed (maybe other platforms as well)
+* Moved SIGINT to submenu, adding magic Stop/Continue that depends on the
+  state of selected processes
+
+Changes from 1.9.4 to 1.9.5
+
+* MOSIX: added "find best node to migrate to" (Ulrik Kjems)
+* Support for Linux bigmem systems (thanks to Christoph Rohland)
+* Minor cosmetic fixes
+* COMM is only auto-removed if it was auto-inserted in the first place
+
+Changes from 1.9.3 to 1.9.4
+
+* MOSIX support from Ulrik Kjems
+
+Changes from 1.9.2 to 1.9.3
+
+* Renice/scheduling changes take effect in table immediately (bug from 1.8.9)
+* Tweaked subtree unfolding
+
+Changes from 1.9.1 to 1.9.2
+
+* Show as much as possible of an opened subtree when clicking on a triangle
+* Fixed a small incremental repainting bug with unfilled tables
+* Added a GUI style selector in the Preference dialog. Thought about it.
+  Removed it. I consider it a most productive use of my time.
+* COMM is removed (if leftmost field) when changing to linear mode
+* Field selection window is notified about the COMM automatics
+
+Changes from 1.9 to 1.9.1
+
+* Fixed process start time comparison (signed int overflow)
+* Fixed embarrassing crash with unfilled table
+
+Changes from 1.8.9 to 1.9
+
+* replaced the tree/linear push buttons with radio buttons
+* make depend in Makefile
+* added user-editable commands that can be run on selected processes
+* Fixed rare crash at mode changes (introduced in 1.8.9)
+* Fixed internal table cleanup bug (introduced in 1.8.9)
+* Small memory leak fix
+* Changed the way columns are added from the field selection dialog
+
+Changes from 1.8.1 to 1.8.9:
+
+* Fixed crash when changing between predefined field sets (James Blanding)
+* Don't normalize PRIO (PZERO unavailable in Solaris 7), just NICE
+* Made many hash tables auto-growing (saves memory and scales better)
+* Solaris zombies now show "-" as START (had no valid time before)
+* Sorting backwards uses pid as secondary key backwards
+* Columns may be reordered by dragging their headers
+* Fixed Solaris environment retrieval bug (would freeze qps sometimes)
+* Table selection background is darkened slightly in the sorted column
+* Tree mode added
+* Added a narrow control bar (hideable)
+* Solaris zombies show "<zombie>" for COMM instead of empty string
+* Eliminated unnecessary startup repaint when .qps-settings exists
+
+Changes from 1.8 to 1.8.1:
+
+* Fixed a table update bug with Qt 2.00 (changing sort column wouldn't repaint)
+
+Changes from 1.7 to 1.8:
+
+* Fixed a problem with multiple swap devices on Solaris (Mathias Fröhlich)
+* Calling a pipe a pipe in Solaris
+* Fixed some warnings when compiling with SparcWorks CC (but far from all)
+* Memory maps shows device major/minor numbers in decimal instead of hex
+* Parametrised fixed column widths in terms of font size (width of a '0');
+* Adjusted width of some columns to safely accomodate large values
+* CWD and ROOT now also on Solaris
+* ttystr for Linux changed: unix98 /dev/pts supported, no longer uses psdevtab
+* CPU field should work on Solaris, giving processor last used by a process
+* The Files table shows open mode (R, W, RW) (Linux only)
+* Fixed Solaris load bug (all three numbers showed the 1 min load average)
+* Setting $LANG if not set, to avoid "fixed" as default font
+* Fixed Solaris bug: anonymous mappings always have device = inode = 0
+* Fixed tiny improbable memory leak in read_maps() (Solaris)
+* Now builds with Qt 2.00 as well as Qt 1.4x
+* Environment table now also on Solaris
+* Control chars filtered out of environment table
+* Icon is updated even when main window is visible (for WindowMaker users)
+* Sped up X11 selection over slow lines somewhat (less roundtrips)
+* Added option to turn off port number to service name mapping
+* Added option to turn off normalization of NICE/PRIO (Solaris)
+* All scheduling policies are shown on Solaris (SYS no longer as "??")
+* Processes in the 'O' state count as running
+
+Changes from 1.6.8 to 1.7:
+
+None, just made the version number shorter.
+
+Changes from 1.6.7 to 1.6.8:
+
+* TTY field width made variable (mostly for Solaris)
+* Linux cpu usage bug fixed
+
+Changes from 1.6.6 to 1.6.7:
+
+* replaced delete with delete[] in proc.C (I hate this language)
+* fixed another Linux segfault (thanks to WeeSan Lee)
+
+Changes from 1.6.5 to 1.6.6:
+
+* limited Solaris 2.6 support (no sockets listing; several fields missing)
+
+Changes from 1.6.4 to 1.6.5:
+
+* possible segfault source fixed (per_cpu_times sometimes uninitialised)
+
+Changes from 1.6.3 to 1.6.4:
+
+* compile error caused by my own brainlessness fixed
+* tiny tweak in proc.C (skip unused fields)
+
+Changes from 1.6.2 to 1.6.3:
+
+* eliminated a potentially troublesome malloc(0) (thanks to efence)
+* eliminated cause of some (harmless) egcs warnings
+
+Changes from 1.6.1 to 1.6.2:
+
+* changed Qt #includes to the long names introduced in Qt 1.40 (Wolfgang W.)
+* eliminated some harmless warnings
+* made ttystr.[Ch] (hopefully) glibc2.1-aware
+* made CMDLINE filter out nonprintable (control) characters
+
+Changes from 1.6 to 1.6.1:
+
+* enabled use of other fonts via -font option
+* fixed table cache bug when changing process view
+* added fields: EUID, SUID, FSUID, GID, EGID, SGID, FSGID, GROUP,
+  and re-grouped some fields
+* added "all fields" table to details window
+* match System.map against kernel version, skip (and warn) if incorrect
+* added CPU field (mainly for SMP users, only works in kernel 2.2)
+
+Changes from 1.5 to 1.6:
+
+* could scroll way too far with right arrow, fixed. (bug in Qt actually)
+* not all fonts knew of NBSP, removed from uptime label
+* fixed the bug causing window sometimes to disappear when using -iconic
+* added CWD and ROOT fields
+* added environment table to details window
+
+Changes from 1.4.4 to 1.5:
+
+* now uses environment variable QPS_COLORS for some colour settings
+* changed the "User fields" to a more useful set
+* new option: -iconic, works as expected
+* sets icon immediately when iconified, and auto-updates when de-iconified
+* load graph starts from current load, not 0 (thanks Gustav)
+* file descriptor number is shown in the socket table
+* unix domain sockets are visible in the Files table
+* made the select-all-descendants feature visible and documented (useful for
+  renicing big compilations, for example)
+* SMP support, with vertical status bar mode including multiple CPU bars
+* load graph code cleaned up, size no longer fixed
+* Qt 1.40 or later now required
+* Meta-W no longer closes the main window.
+* Minor tweaks here and there, and some feeble optimization attempts
+* Control-click in process table selects processes with the same value in the
+  clicked field (neat thing)
+* set window_group hint to help WMs manage the windows together
+* (very) limited session management support
+
+Changes from 1.4.3 to 1.4.4:
+
+* removed some unused fields from Procinfo to make it smaller
+* fixed CheckMenu so it looks good with Qt 1.40
+* fixed buffer overrun screw in read_common() and other potential places
+  (thanks to Peter Amstutz)
+
+Changes from 1.4.2 to 1.4.3:
+
+* fixed bug when right-clicking outside process lines
+* more paranoid overflow detection in BarGraph
+* fixed time display bug when a process has runtime > 100 hours
+* fixed bug when table shrinks, scrollbar disappears but table stays scrolled
+
+Changes from 1.4.1 to 1.4.2:
+
+* fixed bug causing crash when dragging outside displayed rows
+* cleared up dragging semantics of selection (single deselection removed)
+* setproctitle allows longer string using envp (now called "qps-dns-helper")
+
+Changes from 1.4 to 1.4.1:
+
+* show hex address instead of nonsense like _end if wchan is outside System.map
+* tiny signedness fixes to avoid warnings
+* remove -W from compilation flags (less warnings)
+
+Changes from 1.3.9 to 1.4:
+
+* added function to select all offspring of selected processes (unofficial)
+
+Changes from 1.3.8 to 1.3.9:
+
+* fixed a column width bug (widths were not changed when read from settings)
+* nudged the tabs a little to the right
+* tweaked RPRI field width
+* fixed column deletion bug
+
+Changes from 1.3.7 to 1.3.8:
+
+* unified sockets and memory maps windows into a "details" tabbed window
+* added list of open files to details window
+* tweaked table head size (slightly taller, easier to click and looks better)
+* various bug fixes (mainly because Svec now catches index errors better)
+
+Changes from 1.3.6 to 1.3.7:
+
+* fixed minor memory leak (Procinfo::maps)
+* disabled memory maps menu entry when no process is selected
+* added Find Parent/Children functions
+* fixed fatal error in socket window when process died
+
+Changes from 1.3.5 to 1.3.6:
+
+* changed Cancel to OK in error message boxes
+* explicitly defined TCP states to avoid include file clashes with glibc
+* minor unsigned vs signed fixups to suppress compiler warnings
+
+Changes from version 1.3.4 to 1.3.5:
+
+* include file reordering in details.C for compiling on alpha
+* added home page url in About box
+* removed old-style tables (the MacOS7 look), hope nobody liked them too much
+* socket window position unspecified
+* new memory maps window
+* allow different font in htable body (i.e. monospaced in maps window)
+
+Changes from version 1.3.3 to 1.3.4:
+
+* fixed the famous "crash when no swap" bug (introduced in 1.3.3) once again
+
+Changes from version 1.3.2 to 1.3.3:
+
+* new icons (icon.xpm and small-qps.xpm)
+* added cumulative mode for the TIME field (off by default)
+* redlines swap graph when free swap is less than a configurable amount
+  (10% by default)
+* minor dialog geometry tweaks
+
+Changes from version 1.3.1 to 1.3.2:
+
+* more preference dialog fixes (thanks Mario)
+* some CrossBox and CheckMenu tweaks
+* asynchronous host name lookups (but only one at a time)
+* "look up host name" is now on by default
+* set process title (command line) of helper process to something else
+
+Changes from version 1.3 to 1.3.1:
+
+* handles late 2.1 dentry changes with socket displaying
+  (should work with linux >= 2.1.78)
+* added -help (or --help) command line option
+* selecting processes puts their PIDs in the X11 selection (can be turned off)
+* reworked the preference dialog, easier to modify (looks like before though)
+* change some fields from int to long, to work better with alphas (hopefully)
+* added hints in renice dialog (slower, faster) to make things clearer
+* center modal dialogs w.r.t. main window
+* fixed resizing columns in socket table when toggling host name lookup
+
+Changes from version 1.2 to 1.3:
+
+* sorts by WCPU instead of CPU by default (to minimize "jumping")
+* initialize WCPU from CPU for new processes (not from 0)
+* compiles with glibc (libc 6) (thanks to Rudolf Leitgeb)
+* use non-bold font for tooltips (require Qt 1.30)
+* anglicized my last name in the man page since some man viewers can't
+  display latin-1. I'm in a pragmatic mood today.
+* draws separator line under the menu in windows style
+* change window caption to "qps@hostname", good when having several qps running
+* WCHAN now removes leading do_ and sys_ from symbol name, making it shorter
+* moves to top of table when sorting order changes
+* fix WCPU at large update intervals (use libm exp())
+* new HeadedTable class, used by process table and socket info window;
+  this got rid of some redrawing bugs as well.
+* new table appearance (switchable in preferences dialog)
+* socket info windows have tooltips for column headings
+* processes without tty get "-" in TTY field
+* nice and scheduling changes take effect immediately in process table
+* right-button menu on column headings to remove and add fields
+* fvwm2 no longer complains each time the icon is changed (added icon mask)
+* optional hostname lookup in socket windows
+* column width calculations take heading widths into account
+* variable widths in socket windows (local/remote addresses)
+* copes with most displays that have 100dpi fonts (gross hack)
+* change to xpm icons instead of bmp (bin2c/qembed nuked)
+* updates process table 0.5s after a signal has been sent, in case anyone died
+
+Changes from version 1.1 to 1.2:
+
+* bumped version number (forgot to do that in 1.1, oops)
+* changed load graph colour scheme to use grey background if not green/black
+* fixed checked menus and check boxes in WindowsStyle
+* tiny Makefile fixes
+* tooltips indicate if sorting is reversed
+* fixed another zero div bug when there is no swap (this time in BarGraph)
+* now works with kernel 2.0.42+ as well (courtesy Holger Graf)
+* load graph now handles extreme loads (tested with load > 200)
+* fixed a off-by-one bug in load graph
+* several processes can now be selected by dragging mouse in process table
+* fixed problem when iconifying socket window
+* icon usually appears faster when iconified
+* cpu time < 10s shows 1/100s too
+* update button remains pressed during update as visual cue
+* -version option added (just prints version and exits)
+* processes not shown aren't selected even if they were so before
+* some error messages slightly improved
+* new MessageDialog class with possibility of displaying an icon
+* right-button menu in process table
+* more minor internal changes
+
+Changes from version 1.0 to 1.1:
+
+* fixed zero division bug when there is no swap
+* corrected inclusion of "running" processes (only R, W, D included)
+* don't change the sorting order if the sorting field is removed from the view
+* added %WCPU field (cpu percentage averaged over 30 s)
+* added PLCY and RPRI fields for Posix.1b realtime scheduling
+* dialog to change scheduling and/or realtime priority (Posix.1b)
+* option to toggle the auto-saving of settings, and explicitly save them
+* various cosmetic changes
+* WCHAN is displayed in symbolic form (reading symbols from System.map)
+* fixed RSS and SWAP to use resident rather than rss
+* made the CrossBox less deep and more visually obvious
+* fixed display of TIME to change format at long runtimes
+* added Socket Info option and socket info window
+* added some keyboard accelerators
+* status bar rearrangement/facelift
+* added load graph
+* added icon (with load graph if needed). Use qembed to build default icon
+* removed the legend window, added tooltips for headings instead
+* removed close button in modeless dialogs, then put it back again (hard work)
+
+Changes from version 0.1 to 1.0:
+
+* Field selection dialog
+* Menu option to hide the command path in CMDLINE, reducing clutter
+* Menu option to hide the status bar
+* Extended status bar (uptime, cpu graph)
+* Renice is now always absolute (for simplicity); no "=" is needed.
+* Some fields added (flags, wchan, start)
+* Geometry and other settings are read from ${HOME}/.qps-settings,
+  and saved when closed
+* Various bug fixes

@@ -1,0 +1,14 @@
+Source: qps
+Section: x11
+Build-Depends: libqt3-mt-dev, debhelper (>= 4)
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org> , fasthyun@magicn.com
+Standards-Version: 3.6.2
+
+Package: qps
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Visual process status monitor
+ qps is a monitor that displays the status of the processes currently
+ in existence, much like top(1) or ps(1).  The user interface uses the
+ Qt toolkit, and most operations should be fairly intuitive.

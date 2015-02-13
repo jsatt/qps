@@ -1,0 +1,7 @@
+?package(qps):\
+ needs="x11"\
+ section="Apps/System"\
+ hints="Monitoring"\
+ longtitle="qps: visual process monitor"\
+ title="qps"\
+ command="qps"
